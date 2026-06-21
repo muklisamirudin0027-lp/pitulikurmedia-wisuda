@@ -7,7 +7,7 @@ Author: Senior Python Developer
 
 import os
 import streamlit as st
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageOps
 import numpy as np
 
 # Mengatur konfigurasi halaman Streamlit sebelum memuat library berat
@@ -112,8 +112,8 @@ if uploaded_file is not None and template_img is not None:
     st.info("⏳ Memuat foto dan mengekstrak subjek... Silakan tunggu sebentar.")
     
     try:
-        # Load foto siswa
-        student_raw = Image.open(uploaded_file)
+        # Load foto siswa dan perbaiki rotasi otomatis EXIF (wajib untuk foto dari HP agar tidak tidur/miring)
+        student_raw = ImageOps.exif_transpose(Image.open(uploaded_file))
         
         # Import rembg secara dinamis di sini agar inisialisasi aplikasi awal lebih cepat
         from rembg import remove

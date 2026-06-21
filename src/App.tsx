@@ -73,7 +73,7 @@ export default function App() {
   // App.py and requirements.txt local text caching
   const appPyCode = `import streamlit as st
 import os
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageOps
 import numpy as np
 
 st.set_page_config(
@@ -106,7 +106,8 @@ if uploaded_file is not None and template_img is not None:
     
     st.info("⏳ Mengekstrak subjek... Silakan tunggu sebentar.")
     try:
-        student_raw = Image.open(uploaded_file)
+        # Load foto siswa dan perbaiki orientasi otomatis EXIF (dari jepretan kamera ponsel agar tidak miring)
+        student_raw = ImageOps.exif_transpose(Image.open(uploaded_file))
         
         # Menggunakan remove background 'rembg' murni tanpa sentuhan AI Generatif
         from rembg import remove
