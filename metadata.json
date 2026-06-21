@@ -1,0 +1,6 @@
+{
+  "name": "Pitulikurmedia",
+  "description": "Portal mandiri siswa SMP IP Almuhibbin untuk otomasi penggantian background foto wisuda resmi.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
