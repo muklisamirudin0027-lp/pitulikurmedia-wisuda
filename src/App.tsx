@@ -82,8 +82,193 @@ st.set_page_config(
     layout="centered"
 )
 
-st.markdown("<h1 style='text-align: center; color: #1e3a8a;'>🎓 Portal Foto Wisuda pitulikurmedia</h1>", unsafe_allow_html=True)
-st.markdown("<h3 style='text-align: center; color: #b45309;'>SMP IP Almuhibbin</h3>", unsafe_allow_html=True)
+# Judul Utama dan Branding dengan Styling Kustom (CSS Injected)
+st.markdown("""
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+html, body, [data-testid="stAppViewContainer"], [data-testid="stHeader"] {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+div[data-testid="stAppViewContainer"] {
+    background-color: #090d16 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif !important;
+}
+
+.title-container {
+    padding: 30px 10px 10px 10px;
+    text-align: center;
+}
+
+.brand-text {
+    font-size: 12px;
+    font-weight: 700;
+    color: #f59e0b;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+.main-title {
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    font-size: 2.6rem !important;
+    letter-spacing: -0.05em;
+    margin-bottom: 5px !important;
+    line-height: 1.2;
+}
+
+.highlight-yellow {
+    background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sub-title {
+    background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 1.3rem !important;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 5px !important;
+    margin-bottom: 25px !important;
+}
+
+.card-instruction {
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.6) 100%);
+    border: 1px solid rgba(251, 191, 36, 0.15);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+    color: #fbbf24;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.step-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.step-num {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #0b0f19;
+    font-weight: 800;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.85rem;
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
+}
+
+.step-text {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+
+div[data-testid="stFileUploader"] {
+    border: 2px dashed rgba(245, 158, 11, 0.25) !important;
+    border-radius: 16px !important;
+    background-color: rgba(15, 23, 42, 0.7) !important;
+    padding: 24px !important;
+    transition: all 0.3s ease;
+}
+
+div[data-testid="stFileUploader"]:hover {
+    border-color: #fbbf24 !important;
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.15);
+}
+
+div.stDownloadButton > button {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%) !important;
+    color: #0f172a !important;
+    font-weight: 700 !important;
+    border: none !important;
+    padding: 14px 28px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+div.stDownloadButton > button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5) !important;
+    background: linear-gradient(135deg, #fef08a 0%, #fbbf24 100%) !important;
+}
+
+div[data-testid="stSidebar"] {
+    background-color: #0d1321 !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.stAlert {
+    border-radius: 12px !important;
+    border: 1px solid rgba(251, 191, 36, 0.15) !important;
+    background-color: rgba(15, 23, 42, 0.7) !important;
+}
+</style>
+
+<div class="title-container">
+    <div class="brand-text">✨ Portal Kelas 9</div>
+    <div class="main-title">Portal Foto Wisuda <span class="highlight-yellow">pitulikurmedia</span></div>
+    <div class="sub-title">SMP IP Almuhibbin</div>
+</div>
+""", unsafe_allow_html=True)
+
+# Deskripsi instruksi bagi siswa dalam bentuk Card yang sleek
+st.markdown("""
+<div class="card-instruction">
+    <div class="card-title">📖 Petunjuk Unggah & Otomasi Latar Belakang</div>
+    <div class="step-list">
+        <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-text">Siapkan foto wisuda mentah Anda setengah badan (kepala hingga dada) dengan ekspresi tegak lurus terbaik dan pencahayaan yang merata.</div>
+        </div>
+        <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-text">Unggah file foto Anda pada panel di bawah ini (Format yang didukung: <b>.jpg, .jpeg, atau .png</b>).</div>
+        </div>
+        <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-text">Sistem secara cerdas dan murni akan melakukan pemotongan latar belakang (background removal) instan tanpa merusak data wajah Anda.</div>
+        </div>
+        <div class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-text">Sesuaikan ukuran/posisi foto melalui panel kiri bila dirasa perlu, dan klik tombol <b>Unduh Foto Wisuda</b> apabila pratinjau sudah terlihat memukau.</div>
+        </div>
+    </div>
+</div>
+""", unsafe_allow_html=True)
 
 # Membuka file template asli dari disk lokal
 template_path = "template.jpg"
